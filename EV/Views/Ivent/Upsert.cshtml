@@ -1,0 +1,111 @@
+﻿@model EV.Models.Ivent
+
+@{
+    var tittle = "Create Ivent";
+}
+
+<form method="post">
+    <div class="border p-3 ">
+        @if (Model.Id!=0)
+        {
+             tittle = "Edit Ivent";
+            <input asp-for="Id" hidden />
+        }
+       
+
+        <div class="form-group row ">
+            <h2 class="text-info pl-3">@tittle</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="p-2 col-4">
+                        <label asp-for="Name"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input asp-for="Name" class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <div class="p-2 col-4">
+                        <label asp-for="Topic"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input asp-for="Topic" class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <div class="p-2 col-4">
+                        <label asp-for="Subtopic"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input asp-for="Subtopic" class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="p-2 col-4">
+                        <label asp-for="Details"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input asp-for="Details" class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="p-2 col-4">
+                        <label asp-for="DataIvent"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input type="date" asp-for="DataIvent" class="form-control" />
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="p-2 col-4">
+                        <label asp-for="TimeIvent"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input type="time" asp-for="TimeIvent" class="form-control" />
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+
+                        <div class="p-2 col">
+                            @if(Model.Id !=0 )
+                            {
+                                <input type="submit" class="btn btn-primary w-100" value="Обновить" />
+                            }
+                            else
+                            {
+                                <input type="submit" class="btn btn-primary w-100" value="Создать" />
+                            }
+
+                        </div>
+                        <div class="p-2 col">
+                            <a asp-action="Index" class="btn btn-success w-100">Назад</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                @* Keep this empty *@
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@* TODO разобоаться почему где-то есть @ а где-то нет. Строка должна была выглядить - @{ <partial name="_ValidationScriptsPartial">}
+НО это работает и так
+*@
+@section Scripts{
+    <partial name="_ValidationScriptsPartial">
+    }
+
+

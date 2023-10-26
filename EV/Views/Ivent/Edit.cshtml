@@ -1,0 +1,93 @@
+﻿@model EV.Models.Ivent
+
+<form class="" method="post" >
+    <div class="border p-3 ">
+       
+        <div class="form-group row ">
+            <h2 class="text-info pl-3">Изменить Событе</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="p-2 col-4">
+                        <label asp-for="Name"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <div class="p-2 col-4">
+                        <label asp-for="Topic"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input asp-for="Topic" class="form-control" />
+                        <span asp-validation-for="Topic" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <div class="p-2 col-4">
+                        <label asp-for="Subtopic"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input asp-for="Subtopic" class="form-control" />
+                        <span asp-validation-for="Subtopic" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="p-2 col-4">
+                        <label asp-for="Details"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input asp-for="Details" class="form-control" />
+                        <span asp-validation-for="Details" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="p-2 col-4">
+                        <label asp-for="DataIvent"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input type="date" asp-for="DataIvent" class="form-control" />
+                        <span asp-validation-for="DataIvent" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="p-2 col-4">
+                        <label asp-for="TimeIvent"></label>
+                    </div>
+                    <div class="p-2 col-8">
+                        <input type="time" asp-for="TimeIvent" class="form-control" />
+                        <span asp-validation-for="TimeIvent" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+
+                        <div class="p-2 col">
+                            <input type="submit" class="btn btn-primary w-100" value="Обновить" />
+                        </div>
+                        <div class="p-2 col">
+                            <a asp-action="Index" class="btn btn-success w-100">Назад</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                @* Keep this empty *@
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@* TODO разобоаться почему где-то есть @ а где-то нет. Строка должна была выглядить - @{ <partial name="_ValidationScriptsPartial">}
+НО это работает и так
+*@
+@section Scripts{
+    <partial name="_ValidationScriptsPartial">
+    }
+
+

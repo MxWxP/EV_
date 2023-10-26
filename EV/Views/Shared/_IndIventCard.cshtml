@@ -1,0 +1,47 @@
+﻿@model EV.Models.Ivent
+
+<div class="col-lg-4 col-md-6 pb-4">
+    <!-- Card-->
+    <div class="card bg-white  shadow-sm border border-4 " @* style="border-radius:revert *@>
+        <div class="card-body px-3 pt-3 pb-5 row">
+
+            <div class="col-7   "><span class="text-primary position-absolute top-0 start-50 translate-middle-x h4 mt-4 ">@Model.Name</span></div>
+         
+        </div>
+        <hr>
+    @*     <img class="card-img-top img-fluid d-block mx-auto mb-3" src="" alt="Card image cap"> *@
+        <div  class="card-body p-10 px-3 pb-4 row" >
+            <div class="col-12 pt-2  ">
+                <p class="h3">Тема: <span class="text-dark ">@Model.Topic</span></p>
+                <p class="h10">Подтема: <span class="text-dark ">@Model.Subtopic</span></p>
+            </div>
+            <div class="col-12 pt-2 pb-3 ">
+                <p class="h4">Информация: <span class="text-dark float-md-none">@Model.Details</span></p>
+            </div>
+          @*   <div class="col-6">
+                <span class="badge p-2 border w-100 text-dark h5 ">@Model.Topic</span>
+            </div>
+            <div class="col-6 border-0">
+                <span class="badge p-2 border w-100 text-dark h5 ">@Model.Subtopic</span>
+            </div> *@
+            <div class="col-12 pt-2 pb-3 ">
+                <p class="h4">Время: <span class="text-dark float-md-end">@Model.TimeIvent</span></p>
+            </div>
+            <div class="col-12 pt-2 pb-3 ">
+                <p class="h4">Дата: <span class="text-dark float-md-end">@Model.DataIvent</span></p>
+            </div>
+            <div class="col-12 p-1">
+                <a  class="btn btn-primary form-control btn-primary p-2">Зарегистрироваться</a>
+            </div>
+             <div class="col-12 p-1">
+                <a asp-controller="Ivent" asp-route-Id="@Model.Id" asp-action="Upsert" class="btn btn-primary form-control btn-warning p-2">Редактировать</a>
+            </div>
+            <div class="col-12 p-1">
+                <a asp-controller="Ivent" asp-route-Id="@Model.Id" asp-action="Delete" class="btn btn-primary form-control btn-danger p-2" asp-route-Id="@Model.Id">Удалить</a>
+               
+
+            </div>
+        </div>
+    </div>
+</div>
+
